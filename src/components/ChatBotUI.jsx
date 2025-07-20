@@ -117,8 +117,6 @@ export default function ChatBotUI(){
 
   return (
     <div className="container-fluid d-flex flex-column vh-100 bg-light p-3">
-      <h2 className="text-center text-success mb-3">Asistente de Salud</h2>
-
       <div className="card flex-grow-1 overflow-auto mb-3">
         <div className="card-body d-flex flex-column gap-3 overflow-auto">
           {messages.map((msg, i) => (
