@@ -1,6 +1,9 @@
 "use client"
 import { useState } from "react";
+import { Send } from "react-bootstrap-icons";
+import ReactMarkdown from "react-markdown";
 import { Send, Clipboard, HandThumbsUp, HandThumbsDown } from "react-bootstrap-icons";
+
 
 export default function ChatBotUI(){
 
@@ -128,6 +131,7 @@ export default function ChatBotUI(){
               }`}
               style={{ maxWidth: "75%" }}
             >
+              <ReactMarkdown>{msg.content}</ReactMarkdown>
               <div
                 className={`p-2 rounded-3 shadow-sm ${
                   msg.role === "user" ? "bg-success text-white" : "bg-white text-dark"
