@@ -1,8 +1,7 @@
 "use client"
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import { Send, Clipboard, HandThumbsUp, HandThumbsDown } from "react-bootstrap-icons";
-
+import ReactMarkdown from "react-markdown";
 
 export default function ChatBotUI(){
 
@@ -118,8 +117,6 @@ export default function ChatBotUI(){
 
   return (
     <div className="container-fluid d-flex flex-column vh-100 bg-light p-3">
-      <h2 className="text-center text-success mb-3">Asistente de Salud</h2>
-
       <div className="card flex-grow-1 overflow-auto mb-3">
         <div className="card-body d-flex flex-column gap-3 overflow-auto">
           {messages.map((msg, i) => (
@@ -131,11 +128,19 @@ export default function ChatBotUI(){
               style={{ maxWidth: "75%" }}
             >
               <div
-                className={`p-1 rounded-3 shadow-sm ${
+                className={`p-2 rounded-3 shadow-sm ${
                   msg.role === "user" ? "bg-success text-white" : "bg-white text-dark"
                 }`}
               >
-                <ReactMarkdown>{msg.content}</ReactMarkdown>
+                {msg.role === 'user' ? (
+                  <>
+                    {msg.content}
+                  </>
+                ) : (
+                  <ReactMarkdown>
+                    {msg.content}
+                  </ReactMarkdown>
+                )}
               </div>
               
               {/* Botones de acción solo para mensajes del bot */}
