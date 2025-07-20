@@ -1,6 +1,8 @@
 "use client"
 import { useState } from "react";
 import { Send } from "react-bootstrap-icons";
+import ReactMarkdown from "react-markdown";
+
 
 export default function ChatBotUI(){
 
@@ -55,7 +57,7 @@ export default function ChatBotUI(){
               } max-w-75`}
               style={{ maxWidth: "75%" }}
             >
-              {msg.content}
+              <ReactMarkdown>{msg.content}</ReactMarkdown>
             </div>
           ))}
         </div>
